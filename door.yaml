@@ -177,11 +177,20 @@ font:
     size: 14
  
 # Text input_text entity in Home Assistant to display on the oled screen
+
 text_sensor:
+  #- platform: homeassistant
+  #  name: "Oled Display text size"
+  #  entity_id: input_text.oled_display_text_size
+  #  id: oledDisplayTextSize
   - platform: homeassistant
     name: "Oled Display"
     entity_id: input_text.oled_display
     id: oledDisplay
+  - platform: homeassistant
+    name: "Oled Display line 2"
+    entity_id: input_text.oled_display_line2
+    id: oledDisplayLine2
 
 # SSD1036 I2C display
 display:
@@ -189,5 +198,7 @@ display:
     model: "SSD1306 128x32"
     reset_pin: 0
     address: 0x3C
+    #it.printf(0, 0, id(id(oledDisplayTextSize).state.c_str()), "%s",id(oledDisplay).state.c_str());
     lambda: |-
-      it.printf(0, 0, id(font8), "%s",id(oledDisplay).state.c_str());
+      it.printf(0, 0, id(font14), "%s",id(oledDisplay).state.c_str());
+      it.printf(0, 17, id(font14), "%s",id(oledDisplayLine2).state.c_str());
