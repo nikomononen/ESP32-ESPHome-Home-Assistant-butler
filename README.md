@@ -6,4 +6,4 @@ Butler devices for home automation
   - IR receiver HX1838
   - NFC reader RC522
   - Ultrasonic Sensor HC-SR04
-  - OLED LCD Display SSD1306 128x6
+  - OLED LCD Display SSD1306 128x32
